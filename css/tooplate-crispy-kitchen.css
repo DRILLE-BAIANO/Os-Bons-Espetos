@@ -307,7 +307,7 @@ strong {
 
 .overlay {
   background: linear-gradient(to top, var(--dark-color), transparent 100%);
-  position: absolute;
+  position: absolute;      
   top: 0;
   right: 0;
   bottom: 0;
