@@ -400,7 +400,7 @@ strong {
 
 .hero-carousel .carousel-control-prev,
 .hero-carousel .carousel-control-next {
-  background: var(--secondary-color);
+  background:orange;
   width: 60px;
   height: 60px;
   text-align: center;
@@ -412,7 +412,7 @@ strong {
 }
 
 .hero-carousel .carousel-control-next {
-  background: var(--primary-color);
+  background:orange;
   right: 0;
 }
 
