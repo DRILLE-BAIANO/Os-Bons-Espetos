@@ -8710,7 +8710,8 @@ fieldset:disabled .btn {
 
 .bg-info {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important
+    background-color: rgba(0, 0, 0, var(--bs-bg-opacity)) !important; 
+    color: white !important;
 }
 
 .bg-warning {

@@ -607,7 +607,7 @@ strong {
 }
 
 .custom-form button[type="submit"] {
-  background: var(--dark-color);
+  background: red;
   border: 0;
   color: var(--white-color);
   text-transform: uppercase;
