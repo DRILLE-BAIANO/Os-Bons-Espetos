@@ -1,0 +1,30 @@
+CREATE DATABASE restaurante_admin;
+USE restaurante_admin;
+
+-- 1. Tabela de Usuários
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+);
+
+-- Inserir usuário admin (depois que a tabela foi criada)
+INSERT INTO usuarios (username, senha)
+VALUES ('kaua', '1234');
+
+-- 2. Tabela de Itens do Cardápio
+CREATE TABLE cardapio (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
+    descricao TEXT
+);
+
+-- 3. Tabela de Reservas
+CREATE TABLE reservas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_cliente VARCHAR(100),
+    data_reserva DATETIME,
+    numero_pessoas INT,
+    observacoes TEXT
+);
