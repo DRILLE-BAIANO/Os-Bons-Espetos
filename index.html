@@ -4,426 +4,352 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link href="css/bootstrap-icons.css" rel="stylesheet">
-
     <link href="css/tooplate-crispy-kitchen.css" rel="stylesheet">
+    <style>
+    #carouselExample {
+    width: 100%; /* Largura total do carrossel */
+    height: 400px; /* Altura desejada em pixels */
+    overflow: hidden; /* Para evitar que a imagem transborde */
+}
 
+#carouselExample .carousel-item {
+    height: 100%; /* Garante que o item do carrossel ocupe toda a altura do carrossel */
+}
 
+#carouselExample .carousel-item img {
+    width: 100%; /* A imagem ocupa 100% da largura do carrossel */
+    height: 100%; /* A imagem ocupa 100% da altura do carrossel */
+    object-fit: cover; /* Para manter a proporção da imagem e cobrir todo o espaço */
+}
+    </style>
 </head>
 
 <body>
-
+    
+    <!-- Navegação -->
     <nav class="navbar navbar-expand-lg bg-white shadow-lg">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <a class="navbar-brand" href="index.html">
-                Os Bons Espetos
-            </a>
-
+            <a class="navbar-brand" href="index.html">Os Bons Espetos</a>
             <div class="d-lg-none">
                 <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal"
                     data-bs-target="#BookingModal">Reservation</button>
             </div>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="index.html">Home</a>
                     </li>
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="menu.html">Menu</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contato</a>
                     </li>
                 </ul>
             </div>
-
             <div class="d-none d-lg-block">
                 <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal"
                     data-bs-target="#BookingModal">Reservas</button>
             </div>
-
         </div>
     </nav>
-      
-        
-        </section>
 
-        <section class="menu section-padding">
-            <div class="container">
-                <div class="row">
+     <!-- Carrossel -->
+    <section id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/carrossel/carrossel1.jpg" class="d-block w-100" alt="Imagem 1">
+            </div>
+            <div class="carousel-item">
+                <img src="images/daan-evers-tKN1WXrzQ3s-unsplash.jpg" class="d-block w-100" alt="Imagem 2">
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/image3.jpg" class="d-block w-100" alt="Imagem 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </section>
 
-                    <div class="col-12">
-                        <h2 class="text-center mb-lg-5 mb-4"> Menu</h2>
-                    </div>
+    <!-- Seção do Menu -->
+    <section class="menu section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-lg-5 mb-4"> Menu</h2>
+                </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="menu-thumb">
-                            <div class="menu-image-wrap">
-                                <img src="images/breakfast/espeto 1.jpg"
-                                    class="img-fluid menu-image" alt="">
-
-                                <span class="menu-tag bg-warning">Breakfast</span>
-                            </div>
-
-                            <div class="menu-info d-flex flex-wrap align-items-center">
-                                <h4 class="mb-0">Morning Fresh</h4>
-
-                                <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>12.50</span>
-
-                                <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                    <h6 class="reviews-text mb-0 me-3">4.3/5</h6>
-
-                                    <div class="reviews-stars">
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                    </div>
-
-                                    <p class="reviews-text mb-0 ms-4">102 Reviews</p>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="menu-thumb">
+                        <div class="menu-image-wrap">
+                            <img src="images/breakfast/espeto 1.jpg" class="img-fluid menu-image" alt="">
+                            <span class="menu-tag bg-warning">Breakfast</span>
+                        </div>
+                        <div class="menu-info d-flex flex-wrap align-items-center">
+                            <h4 class="mb-0">Morning Fresh</h4>
+                            <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>12.50</span>
+                            <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                <h6 class="reviews-text mb-0 me-3">4.3/5</h6>
+                                <div class="reviews-stars">
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
                                 </div>
+                                <p class="reviews-text mb-0 ms-4">102 Reviews</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="menu-thumb">
-                            <div class="menu-image-wrap">
-                                <img src="images/lunch/farhad-ibrahimzade-MGKqxm6u2bc-unsplash.jpg"
-                                    class="img-fluid menu-image" alt="">
-
-                                <span class="menu-tag bg-warning">Lunch</span>
-                            </div>
-
-                            <div class="menu-info d-flex flex-wrap align-items-center">
-                                <h4 class="mb-0">Tooplate Soup</h4>
-
-                                <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>24.50</span>
-
-                                <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                    <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                    <div class="reviews-stars">
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                    </div>
-
-                                    <p class="reviews-text mb-0 ms-4">50 Reviews</p>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="menu-thumb">
+                        <div class="menu-image-wrap">
+                            <img src="images/lunch/farhad-ibrahimzade-MGKqxm6u2bc-unsplash.jpg" class="img-fluid menu-image" alt="">
+                            <span class="menu-tag bg-warning">Lunch</span>
+                        </div>
+                        <div class="menu-info d-flex flex-wrap align-items-center">
+                            <h4 class="mb-0">Tooplate Soup</h4>
+                            <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>24.50</span>
+                            <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                <h6 class="reviews-text mb-0 me-3">3/5</h6>
+                                <div class="reviews-stars">
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
                                 </div>
+                                <p class="reviews-text mb-0 ms-4">50 Reviews</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="menu-thumb">
-                            <div class="menu-image-wrap">
-                                <img src="images/dinner/keriliwi-c3mFafsFz2w-unsplash.jpg" class="img-fluid menu-image"
-                                    alt="">
-
-                                <span class="menu-tag bg-warning">Dinner</span>
-                            </div>
-
-                            <div class="menu-info d-flex flex-wrap align-items-center">
-                                <h4 class="mb-0">Premium Steak</h4>
-
-                                <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>45</span>
-
-                                <del class="ms-4"><small>$</small>150</del>
-
-                                <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                    <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                    <div class="reviews-stars">
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                    </div>
-
-                                    <p class="reviews-text mb-0 ms-4">86 Reviews</p>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="menu-thumb">
+                        <div class="menu-image-wrap">
+                            <img src="images/dinner/keriliwi-c3mFafsFz2w-unsplash.jpg" class="img-fluid menu-image" alt="">
+                            <span class="menu-tag bg-warning">Dinner</span>
+                        </div>
+                        <div class="menu-info d-flex flex-wrap align-items-center">
+                            <h4 class="mb-0">Premium Steak</h4>
+                            <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>45</span>
+                            <del class="ms-4"><small>$</small>150</del>
+                            <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                <h6 class="reviews-text mb-0 me-3">3/5</h6>
+                                <div class="reviews-stars">
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
                                 </div>
+                                <p class="reviews-text mb-0 ms-4">86 Reviews</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="menu-thumb">
-                            <div class="menu-image-wrap">
-                                <img src="images/dinner/farhad-ibrahimzade-ZipYER3NLhY-unsplash.jpg"
-                                    class="img-fluid menu-image" alt="">
-
-                                <span class="menu-tag bg-warning">Dinner</span>
-                            </div>
-
-                            <div class="menu-info d-flex flex-wrap align-items-center">
-                                <h4 class="mb-0">Seafood Set</h4>
-
-                                <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>86</span>
-
-                                <del class="ms-4"><small>$</small>124</del>
-
-                                <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                    <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                    <div class="reviews-stars">
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                    </div>
-
-                                    <p class="reviews-text mb-0 ms-4">44 Reviews</p>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="menu-thumb">
+                        <div class="menu-image-wrap">
+                            <img src="images/dinner/farhad-ibrahimzade-ZipYER3NLhY-unsplash.jpg" class="img-fluid menu-image" alt="">
+                            <span class="menu-tag bg-warning">Dinner</span>
+                        </div>
+                        <div class="menu-info d-flex flex-wrap align-items-center">
+                            <h4 class="mb-0">Seafood Set</h4>
+                            <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>86</span>
+                            <del class="ms-4"><small>$</small>124</del>
+                            <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                <h6 class="reviews-text mb-0 me-3">3/5</h6>
+                                <div class="reviews-stars">
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
                                 </div>
+                                <p class="reviews-text mb-0 ms-4">44 Reviews</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="menu-thumb">
-                            <div class="menu-image-wrap">
-                                <img src="images/breakfast/louis-hansel-dphM2U1xq0U-unsplash.jpg"
-                                    class="img-fluid menu-image" alt="">
-
-                                <span class="menu-tag bg-warning">Breakfast</span>
-                            </div>
-
-                            <div class="menu-info d-flex flex-wrap align-items-center">
-                                <h4 class="mb-0">Burger Set</h4>
-
-                                <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>20.50</span>
-
-                                <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                    <h6 class="reviews-text mb-0 me-3">4.3/5</h6>
-
-                                    <div class="reviews-stars">
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                    </div>
-
-                                    <p class="reviews-text mb-0 ms-4">102 Reviews</p>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="menu-thumb">
+                        <div class="menu-image-wrap">
+                            <img src="images/breakfast/louis-hansel-dphM2U1xq0U-unsplash.jpg" class="img-fluid menu-image" alt="">
+                            <span class="menu-tag bg-warning">Breakfast</span>
+                        </div>
+                        <div class="menu-info d-flex flex-wrap align-items-center">
+                            <h4 class="mb-0">Burger Set</h4>
+                            <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>20.50</span>
+                            <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                <h6 class="reviews-text mb-0 me-3">4.3/5</h6>
+                                <div class="reviews-stars">
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
                                 </div>
+                                <p class="reviews-text mb-0 ms-4">102 Reviews</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="menu-thumb">
-                            <div class="menu-image-wrap">
-                                <img src="images/lunch/farhad-ibrahimzade-D5c9ZciQy_I-unsplash.jpg"
-                                    class="img-fluid menu-image" alt="">
-
-                                <span class="menu-tag bg-warning">Lunch</span>
-                            </div>
-
-                            <div class="menu-info d-flex flex-wrap align-items-center">
-                                <h4 class="mb-0">Healthy Soup</h4>
-
-                                <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>34.20</span>
-
-                                <div class="d-flex flex-wrap align-items-center w-100 mt-2">
-                                    <h6 class="reviews-text mb-0 me-3">3/5</h6>
-
-                                    <div class="reviews-stars">
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star-fill reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                        <i class="bi-star reviews-icon"></i>
-                                    </div>
-
-                                    <p class="reviews-text mb-0 ms-4">64 Reviews</p>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="menu-thumb">
+                        <div class="menu-image-wrap">
+                            <img src="images/lunch/farhad-ibrahimzade-D5c9ZciQy_I-unsplash.jpg" class="img-fluid menu-image" alt="">
+                            <span class="menu-tag bg-warning">Lunch</span>
+                        </div>
+                        <div class="menu-info d-flex flex-wrap align-items-center">
+                            <h4 class="mb-0">Healthy Soup</h4>
+                            <span class="price-tag bg-white shadow-lg ms-4"><small>$</small>34.20</span>
+                            <div class="d-flex flex-wrap align-items-center w-100 mt-2">
+                                <h6 class="reviews-text mb-0 me-3">3/5</h6>
+                                <div class="reviews-stars">
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star-fill reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
+                                    <i class="bi-star reviews-icon"></i>
                                 </div>
+                                <p class="reviews-text mb-0 ms-4">64 Reviews</p>
                             </div>
                         </div>
                     </div>
+                </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section class="BgImage"></section>
+
+    <section class="news section-padding">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center mb-lg-5 mb-4">News &amp; Events</h2>
+
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="news-thumb mb-4">
+                        <a href="news-detail.html">
+                            <img src="images/news/pablo-merchan-montes-Orz90t6o0e4-unsplash.jpg" class="img-fluid news-image" alt="">
+                        </a>
+                        <div class="news-text-info news-text-info-large">
+                            <span class="category-tag bg-danger">Featured</span>
+                            <h5 class="news-title mt-2">
+                                <a href="news-detail.html" class="news-title-link">Healthy Lifestyle and happy living tips</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="news-thumb mb-4">
+                        <a href="news-detail.html">
+                            <img src="images/news/stefan-johnson-xIFbDeGcy44-unsplash.jpg" class="img-fluid news-image" alt="">
+                        </a>
+                        <div class="news-text-info news-text-info-large">
+                            <span class="category-tag bg-danger">Featured</span>
+                            <h5 class="news-title mt-2">
+                                <a href="news-detail.html" class="news-title-link">How to make a healthy meal</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="news-thumb mb-lg-0 mb-lg-4 mb-0">
+                        <a href="news-detail.html">
+                            <img src="images/news/gilles-lambert-S_LhjpfIdm4-unsplash.jpg" class="img-fluid news-image" alt="">
+                        </a>
+                        <div class="news-text-info">
+                            <span class="category-tag me-3 bg-info">Promotions</span>
+                            <strong>8 April 2022</strong>
+                            <h5 class="news-title mt-2">
+                                <a href="news-detail.html" class="news-title-link">Is Coconut good for you?</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="news-thumb mb-lg-0 mb-lg-4 mb-2">
+                        <a href="news-detail.html">
+                            <img src="images/news/caroline-attwood-bpPTlXWTOvg-unsplash.jpg" class="img-fluid news-image" alt="">
+                        </a>
+                        <div class="news-text-info">
+                            <span class="category-tag">News</span>
+                            <h5 class="news-title mt-2">
+                                <a href="news-detail.html" class="news-title-link">Salmon Steak Noodle</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="news-thumb mb-4">
+                        <a href="news-detail.html">
+                            <img src="images/news/louis-hansel-GiIiRV0FjwU-unsplash.jpg" class="img-fluid news-image" alt="">
+                        </a>
+                        <div class="news-text-info">
+                            <span class="category-tag me-3 bg-info">Meeting</span>
+                            <strong>30 April 2022</strong>
+                            <h5 class="news-title mt-2">
+                                <a href="news-detail.html" class="news-title-link">Making a healthy salad</a>
+                            </h5>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <section class="BgImage"></section>
-
-        <section class="news section-padding">
-            <div class="container">
-                <div class="row">
-
-                    <h2 class="text-center mb-lg-5 mb-4">News &amp; Events</h2>
-
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="news-thumb mb-4">
-                            <a href="news-detail.html">
-                                <img src="images/news/pablo-merchan-montes-Orz90t6o0e4-unsplash.jpg"
-                                    class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info news-text-info-large">
-                                <span class="category-tag bg-danger">Featured</span>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">Healthy Lifestyle and happy
-                                        living tips</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <div class="news-thumb mb-4">
-                            <a href="news-detail.html">
-                                <img src="images/news/stefan-johnson-xIFbDeGcy44-unsplash.jpg"
-                                    class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info news-text-info-large">
-                                <span class="category-tag bg-danger">Featured</span>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">How to make a healthy meal</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="news-thumb mb-lg-0 mb-lg-4 mb-0">
-                            <a href="news-detail.html">
-                                <img src="images/news/gilles-lambert-S_LhjpfIdm4-unsplash.jpg"
-                                    class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info">
-                                <span class="category-tag me-3 bg-info">Promotions</span>
-
-                                <strong>8 April 2022</strong>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">Is Coconut good for you?</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-12">
-                        <div class="news-thumb mb-lg-0 mb-lg-4 mb-2">
-                            <a href="news-detail.html">
-                                <img src="images/news/caroline-attwood-bpPTlXWTOvg-unsplash.jpg"
-                                    class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info">
-                                <span class="category-tag">News</span>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">Salmon Steak Noodle</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="news-thumb mb-4">
-                            <a href="news-detail.html">
-                                <img src="images/news/louis-hansel-GiIiRV0FjwU-unsplash.jpg"
-                                    class="img-fluid news-image" alt="">
-                            </a>
-
-                            <div class="news-text-info">
-                                <span class="category-tag me-3 bg-info">Meeting</span>
-
-                                <strong>30 April 2022</strong>
-
-                                <h5 class="news-title mt-2">
-                                    <a href="news-detail.html" class="news-title-link">Making a healthy salad</a>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                    
-                 <li>
-                    <a class="nav-link" href="adm.html">Administrativ</a>
-                 </li>
-
-
- 
-                </div>
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <footer class="site-footer section-padding">
-
         <div class="container">
-
             <div class="row">
-
                 <div class="col-lg-4 col-md-7 col-xs-12 tooplate-mt30">
                     <h6 class="text-white mb-lg-4 mb-3">Local</h6>
-
                     <p>R. Virgílio Manesco, 21 - Conj. Res. Cel. Jose V. Franca II, Barra Bonita - SP, 17345-060</p>
-
-                    <a href="https://maps.app.goo.gl/veXqvEPpqaPnfEF36"
-                        class="custom-btn btn btn-dark mt-2">Localização</a>
+                    <a href="https://maps.app.goo.gl/veXqvEPpqaPnfEF36" class="custom-btn btn btn-dark mt-2">Localização</a>
                 </div>
-
                 <div class="col-lg-4 col-md-5 col-xs-12 tooplate-mt30">
                     <h6 class="text-white mb-lg-4 mb-3">Funcionamento</h6>
-
                     <p class="mb-2">Segunda-feira - Sexta</p>
-
                     <p>10:00 AM - 08:00 PM</p>
-
                     <p>Tel: <a href="tel: 14998569602" class="tel-link">14998569602</a></p>
                 </div>
-
                 <div class="col-lg-4 col-md-6 col-xs-12 tooplate-mt30">
                     <h6 class="text-white mb-lg-4 mb-3">Social</h6>
-
                     <ul class="social-icon">
-                        <li><a href="https://www.instagram.com/osbons.espetosbb?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                target="_blank" class="social-icon-link bi-instagram"></a></li>
-
-                        <li><a href="https://www.youtube.com/embed/zcC2IsMNBdA?si=E3xGF3ctHw_qwWa_" target="_blank"
-                                class="social-icon-link bi-youtube"></a></li>
-
+                        <li><a href="https://www.instagram.com/osbons.espetosbb?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon-link bi-instagram"></a></li>
+                        <li><a href="https://www.youtube.com/embed/zcC2IsMNBdA?si=E3xGF3ctHw_qwWa_" target="_blank" class="social-icon-link bi-youtube"></a></li>
                     </ul>
-
                 </div>
-
             </div><!-- row ending -->
-
         </div><!-- container ending -->
-
     </footer>
 
     <!-- Modal -->
@@ -432,51 +358,34 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="mb-0">Reservas
-
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </h3>
                 </div>
-
                 <div class="modal-body d-flex flex-column justify-content-center">
                     <div class="booking">
-
                         <form class="booking-form row" role="form" action="#" method="post">
                             <div class="col-lg-6 col-12">
                                 <label for="name" class="form-label">Nome Completo</label>
-
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name"
-                                    required>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
                             </div>
-
                             <div class="col-lg-6 col-12">
                                 <label for="email" class="form-label">Email </label>
-
-                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control"
-                                    placeholder="your@email.com" required>
+                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="your@email.com" required>
                             </div>
-
                             <div class="col-lg-6 col-12">
                                 <label for="phone" class="form-label">Telefone</label>
-
-                                <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                    class="form-control" placeholder="123-456-7890">
+                                <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" placeholder="123-456-7890">
                             </div>
-
                             <div class="col-lg-6 col-12">
                                 <label for="people" class="form-label">Numero de Pessoas</label>
-
-                                <input type="text" name="people" id="people" class="form-control"
-                                    placeholder="12 persons">
+                                <input type="text" name="people" id="people" class="form-control" placeholder="12 persons">
                             </div>
-
                             <div class="col-lg-6 col-12">
                                 <label for="date" class="form-label">Data</label>
-
                                 <input type="date" name="date" id="date" value="" class="form-control">
                             </div>
-
                             <div class="col-lg-6 col-12">
                                 <label for="time" class="form-label">Time</label>
-
                                 <select class="form-select form-control" name="time" id="time">
                                     <option value="5" selected>5:00 PM</option>
                                     <option value="6">6:00 PM</option>
@@ -485,25 +394,18 @@
                                     <option value="9">9:00 PM</option>
                                 </select>
                             </div>
-
                             <div class="col-12">
                                 <label for="message" class="form-label">Special Request</label>
-
-                                <textarea class="form-control" rows="4" id="message" name="message"
-                                    placeholder=""></textarea>
+                                <textarea class="form-control" rows="4" id="message" name="message" placeholder=""></textarea>
                             </div>
-
                             <div class="col-lg-4 col-12 ms-auto">
-                                <button type="submit" class="form-control">Enviar
+                                <button type="submit" class="form-control">Enviar</button>
                             </div>
                         </form>
                     </div>
                 </div>
-
                 <div class="modal-footer"></div>
-
             </div>
-
         </div>
     </div>
 

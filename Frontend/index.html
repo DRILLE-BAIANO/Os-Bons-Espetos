@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante - Gerenciamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="mainContent" style="display: none;">
+        <h1>Cardápio do Restaurante</h1>
+        <div id="cardapio"></div>
+
+        <h2>Adicionar Item ao Cardápio</h2>
+        <form id="addItemForm">
+            <input type="text" id="nome" placeholder="Nome do Item" required>
+            <input type="number" id="preco" placeholder="Preço" required>
+            <input type="text" id="descricao" placeholder="Descrição" required>
+            <button type="submit">Adicionar Item</button>
+        </form>
+
+        <h1>Reservas</h1>
+        <div id="reservas"></div>
+
+        <h2>Fazer Reserva</h2>
+        <form id="addReservaForm">
+            <input type="text" id="nome_cliente" placeholder="Nome do Cliente" required>
+            <input type="date" id="data_reserva" required>
+            <input type="number" id="numero_pessoas" placeholder="Número de Pessoas" required>
+            <button type="submit">Fazer Reserva</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
