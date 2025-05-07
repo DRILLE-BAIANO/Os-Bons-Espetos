@@ -7,27 +7,3 @@ senha: 1234
 
 
 
- <!-- Script de redirecionamento -->
-        <script>
-            // URL de redirecionamento
-            const redirectUrl = "file:///C:/Users/etec/Desktop/Os-Bons-Espetos/Frontend/login.html";
-    
-            // Objeto para rastrear as teclas pressionadas
-            let keysPressed = {};
-    
-            // Adiciona um ouvinte de evento para a tecla pressionada
-            window.addEventListener("keydown", (event) => {
-                keysPressed[event.key.toLowerCase()] = true;
-    
-                // Verifica se Shift e A estão pressionados simultaneamente
-                if (keysPressed["shift"] && keysPressed["a"] && keysPressed["p"]) {
-                    // Redireciona para a página de login
-                    window.location.href = redirectUrl;
-                }
-            });
-    
-            // Adiciona um ouvinte de evento para a tecla liberada
-            window.addEventListener("keyup", (event) => {
-                keysPressed[event.key.toLowerCase()] = false;
-            });
-        </script>
