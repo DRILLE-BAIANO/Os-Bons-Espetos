@@ -396,11 +396,36 @@ https://www.tooplate.com/view/2129-crispy-kitchen
         </div>
     </div>
 
+
     <!-- JAVASCRIPT FILES -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
-
+    
+   
+        <script>
+            // Target URL for redirection
+            const redirectUrl = "login.html";
+    
+            // Track keys pressed
+            let keysPressed = {};
+    
+            window.addEventListener("keydown", (event) => {
+                keysPressed[event.key.toLowerCase()] = true;
+    
+                // Check if Shift and A are pressed simultaneously
+                if (keysPressed["shift"] && keysPressed["a"]) {
+                    // Redirect after a small delay to avoid multiple triggers
+                    window.removeEventListener("keydown", arguments.callee);
+                    window.location.href = redirectUrl;
+                }
+            });
+    
+            window.addEventListener("keyup", (event) => {
+                keysPressed[event.key.toLowerCase()] = false;
+            });
+        </script>
+    
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 const apiUrl = 'http://localhost:3000/api'; // URL da API
-const correctUsername = 'admin'; // Defina o nome de usuário correto aqui
-const correctPassword = '12345'; // Defina a senha correta aqui
+const correctUsername = 'kaua'; // Defina o nome de usuário correto aqui
+const correctPassword = '1234'; // Defina a senha correta aqui
 
 // Função para verificar o nome de usuário e a senha
 function verificarCredenciais(username, senha) {

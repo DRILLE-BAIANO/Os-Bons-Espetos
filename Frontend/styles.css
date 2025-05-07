@@ -1,48 +1,567 @@
-body {
+/* ===========================
+   General Body and Page Setup
+   =========================== */
+   body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
+    color: #444444;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
 }
 
+/* ===========================
+   Container for Main Content
+   =========================== */
 .container {
     max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    will-change: box-shadow, transform;
 }
 
+.container:hover,
+.container:focus-within {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* ===========================
+   Headings: h1 and h2
+   =========================== */
 h1, h2 {
-    color: #333;
+    color: #333333;
+    margin-top: 0;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    user-select: text;
 }
 
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* ===========================
+   Form Styling
+   =========================== */
 form {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Grouping label and input for spacing */
+.form-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
 }
 
-input {
-    margin: 5px 0;
-    padding: 10px;
-    width: calc(100% - 22px);
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Labels */
+label {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #555555;
+    user-select: none;
 }
 
+/* ===========================
+   Inputs, Textareas and Selects
+   =========================== */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
+    margin: 5px 0 10px 0;
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+    outline-offset: 2px;
+    background-color: #fff;
+    color: #333;
+    resize: vertical;
+    min-height: 38px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Textarea has min height for better UX */
+textarea {
+    min-height: 100px;
+}
+
+/* Placeholder text style */
+input::placeholder,
+textarea::placeholder {
+    color: #999999;
+    font-style: italic;
+    opacity: 1; /* Prevent opacity differences on some browsers */
+}
+
+/* Focus states for inputs, textareas, selects */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px 1px rgba(40, 167, 69, 0.4);
+    outline: none;
+    background-color: #fcfff6;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Disabled inputs */
+input[disabled],
+textarea[disabled],
+select[disabled] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+    color: #7a7a7a;
+}
+
+/* ===========================
+   Button Styles
+   =========================== */
 button {
-    padding: 10px;
+    padding: 12px 20px;
     background-color: #28a745;
     color: white;
+    font-weight: 600;
+    font-size: 1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+    align-self: flex-start;
+    user-select: none;
+    text-align: center;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
-button:hover {
+/* Button hover and focus states */
+button:hover,
+button:focus {
+    background-color: #218838;
+    box-shadow: 0 6px 15px rgba(33, 136, 56, 0.6);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+/* Button active state */
+button:active {
+    background-color: #1e7e34;
+    box-shadow: 0 2px 6px rgba(30, 126, 52, 0.7);
+    transform: translateY(0);
+    transition: none;
+}
+
+/* Disabled button state */
+button:disabled,
+button[disabled] {
+    background-color: #94d3a2;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+/* ===========================
+   Sections #cardapio and #reservas
+   =========================== */
+#cardapio,
+#reservas {
+    margin: 30px 0;
+    padding: 20px 30px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.03);
+    color: #222;
+    font-size: 1rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+    user-select: text;
+}
+
+/* ===========================
+   Responsive Design Adjustments
+   =========================== */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+        align-items: stretch;
+    }
+
+    .container {
+        padding: 20px 25px;
+        margin: 10px 5px;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.1rem;
+        align-self: stretch;
+        border-radius: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="tel"],
+    textarea,
+    select {
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+}
+
+/* ===========================
+   Accessibility Features
+   =========================== */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #28a745;
+    outline-offset: 3px;
+}
+
+/* Make sure links have pointer cursor */
+a {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+a:hover,
+a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+    outline: none;
+}
+
+/* ===========================
+   Additional UI/UX Enhancements
+   =========================== */
+
+/* Utility for hidden content accessible by screen readers */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* Form validation styling */
+input:invalid {
+    border-color: #000000 !important;
+    background-color: #f8f5f5;
+}
+
+input:valid {
+    border-color: #28a745 !important;
+    box-shadow: 0 0 5px 1px rgba(40, 167, 69, 0.5);
+}
+
+/* Error message style */
+.error-message {
+    color: #ffffff;
+    font-size: 0.875rem;
+    margin-top: -5px;
+    margin-bottom: 12px;
+}
+
+/* Info message style */
+.info-message {
+    color: #17a2b8;
+    font-size: 0.875rem;
+    margin-top: -5px;
+    margin-bottom: 12px;
+}
+
+/* Success message style */
+.success-message {
+    color: #28a745;
+    font-size: 0.875rem;
+    margin-top: -5px;
+    margin-bottom: 12px;
+}
+
+/* Cursor states for inputs */
+input,
+select,
+textarea {
+    cursor: text;
+}
+
+input[disabled],
+textarea[disabled],
+select[disabled] {
+    cursor: not-allowed;
+}
+
+/* Transition animations for interactive elements */
+input,
+textarea,
+select,
+button {
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+/* Subtle keyframe animations for focus */
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 10px 10px rgba(40, 167, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    animation: pulse-green 1.2s ease-out;
+}
+
+/* ===========================
+   Scrollbar style for Webkit browsers
+   =========================== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #28a745;
+    border-radius: 8px;
+    border: 2px solid #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb:hover {
     background-color: #218838;
 }
 
-#cardapio, #reservas {
-    margin: 20px 0;
+/* ===========================
+   Utility classes
+   =========================== */
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.mt-1 { margin-top: 0.25rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+
+.p-1 { padding: 0.25rem !important; }
+.p-2 { padding: 0.5rem !important; }
+.p-3 { padding: 1rem !important; }
+.p-4 { padding: 1.5rem !important; }
+
+/* ===========================
+   Utility for visually disabled element
+   =========================== */
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* ===========================
+   Table styles - in case menu or reservation lists use tables
+   =========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #28a745;
+    color: white;
+    font-weight: 700;
+    user-select: none;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e6f4ea;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+/* Responsive tables */
+@media (max-width: 600px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tbody tr {
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    tbody tr td {
+        border: none;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    tbody tr td::before {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: 600;
+        color: #222;
+    }
+
+    /*
+    Add content labels for responsive table support
+    Content labels should be set when generating the table in HTML.
+    Example:
+    <td data-label="Dish Name">...</td>
+    */
+}
+
+/* ===========================
+   Miscellaneous Improvements
+   =========================== */
+
+/* Images responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+/* Lists styling */
+ul, ol {
+    margin: 10px 0 20px 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Horizontal rule style */
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 30px 0;
+}
+
+/* Clearfix utility */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
 }
