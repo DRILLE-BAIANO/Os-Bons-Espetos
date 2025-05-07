@@ -1,3 +1,4 @@
+
 const apiUrl = 'http://localhost:3000/api'; // URL da API
 const correctUsername = 'kaua'; // Defina o nome de usuário correto aqui
 const correctPassword = '1234'; // Defina a senha correta aqui
@@ -110,3 +111,5 @@ window.onload = function() {
         listarReservas();
     }
 };
+
+document.getElementById('addItemForm').addEventListener('submit')

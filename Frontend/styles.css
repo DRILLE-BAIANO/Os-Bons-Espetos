@@ -565,3 +565,36 @@ hr {
     display: table;
     clear: both;
 }
+
+/*index */
+/* Feedback message styles */
+.feedback-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    color: #333;
+    font-weight: bold;
+    display: none; /* Initially hidden */
+}
+
+/* Menu and Reservation Section Styles */
+.menu-section, .reservation-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+/* Button styles with icons */
+button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Responsive adjustments for forms */
+@media (max-width: 600px) {
+    .form-group {
+        flex-direction: column;
+    }
+}

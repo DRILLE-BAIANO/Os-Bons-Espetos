@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante - Gerenciamento</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container" id="mainContent" style="display: none;">
+    <div class="container" id="mainContent">
         <h1>Cardápio do Restaurante</h1>
-        <div id="cardapio"></div>
+        <div id="cardapio" class="menu-section"></div>
 
         <h2>Adicionar Item ao Cardápio</h2>
-        <form id="addItemForm">
-            <input type="text" id="nome" placeholder="Nome do Item" required>
-            <input type="number" id="preco" placeholder="Preço" required>
-            <input type="text" id="descricao" placeholder="Descrição" required>
-            <button type="submit">Adicionar Item</button>
+        <form id="addItemForm" class="form-group">
+            <input type="text" id="nome" placeholder="Nome do Item" required aria-label="Nome do Item">
+            <input type="number" id="preco" placeholder="Preço" required aria-label="Preço">
+            <input type="text" id="descricao" placeholder="Descrição" required aria-label="Descrição">
+            <button type="submit"><i class="fas fa-plus"></i> Adicionar Item</button>
         </form>
 
+        <hr>
+
         <h1>Reservas</h1>
-        <div id="reservas"></div>
+        <div id="reservas" class="reservation-section"></div>
 
         <h2>Fazer Reserva</h2>
+        <form id="addReservaForm" class="form-group">
+            <input type="text" id="nome_cliente" placeholder="Nome do Cliente" required aria-label="Nome do Cliente">
+            <input type="date" id="data_reserva" required aria-label="Data da Reserva">
+            <input type="number" id="numero_pessoas" placeholder="Número de Pessoas" required aria-label="Número de Pessoas">
+            <button type="submit"><i class="fas fa-calendar-check"></i> Fazer Reserva</button>
+        </form>
+
+        <!-- Feedback Messages -->
+        <div id="feedback" class="feedback-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
         <form id="addReservaForm">
             <input type="text" id="nome_cliente" placeholder="Nome do Cliente" required>
             <input type="date" id="data_reserva" required>
