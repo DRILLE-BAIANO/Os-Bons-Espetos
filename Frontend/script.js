@@ -1,4 +1,3 @@
-
 const apiUrl = 'http://localhost:3000/api'; // URL da API
 const correctUsername = 'kaua'; // Defina o nome de usuário correto aqui
 const correctPassword = '1234'; // Defina a senha correta aqui
@@ -103,13 +102,91 @@ document.getElementById('addReservaForm')?.addEventListener('submit', function(e
     .catch(error => console.error('Erro ao fazer reserva:', error));
 });
 
-// Chama as funções para listar cardápio e reservas ao carregar a página
+// Função para alternar entre tema claro e escuro
+document.querySelectorAll('#toggleTheme').forEach(button => {
+    button.addEventListener('click', function() {
+        const body = document.body;
+        const mainContainer = document.getElementById('mainContent');
+        const loginContainer = document.getElementById('loginContainer');
+        const toggleButton = document.getElementById('toggleTheme');
+
+        body.classList.toggle('dark');
+        if (mainContainer) {
+            mainContainer.classList.toggle('dark');
+        }
+        if (loginContainer) {
+            loginContainer.classList.toggle('dark');
+        }
+        toggleButton.classList.toggle('dark');
+
+        // Salvar a preferência do tema no localStorage
+        if (body.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});
+
+// Verificar a preferência do tema ao carregar a página
 window.onload = function() {
     if (localStorage.getItem('autenticado') === 'true') {
         document.getElementById('mainContent').style.display = 'block'; // Exibe o conteúdo principal
         listarCardapio();
         listarReservas();
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            document.getElementById('mainContent').classList.add('dark');
+            document.getElementById('toggleTheme').classList.add('dark');
+        }
+    } else {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            document.getElementById('loginContainer').classList.add('dark');
+            document.getElementById('toggleTheme').classList.add('dark');
+        }
     }
 };
 
-document.getElementById('addItemForm').addEventListener('submit')
+// Verificar a preferência do tema ao carregar a página
+window.onload = function() {
+    if (localStorage.getItem('autenticado') === 'true') {
+        document.getElementById('mainContent').style.display = 'block'; // Exibe o conteúdo principal
+        listarCardapio();
+        listarReservas();
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            document.getElementById('mainContent').classList.add('dark');
+            document.getElementById('toggleTheme').classList.add('dark');
+        }
+    } else {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            document.getElementById('loginContainer').classList.add('dark');
+            document.getElementById('toggleTheme').classList.add('dark');
+        }
+    }
+};
+
+
+// Verificar a preferência do tema ao carregar a página
+window.onload = function() {
+    if (localStorage.getItem('autenticado') === 'true') {
+        document.getElementById('mainContent').style.display = 'block'; // Exibe o conteúdo principal
+        listarCardapio();
+        listarReservas();
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark');
+            document.getElementById('mainContent').classList.add('dark');
+            document.getElementById('toggleTheme').classList.add('dark');
+        }
+    }
+};
