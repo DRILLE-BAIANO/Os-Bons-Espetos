@@ -1,4 +1,5 @@
-const db = require('./config/db');
+// /Backend/models/cardapio.js
+const db = require('../Config/db');
 
 const Cardapio = {
     getAll: (callback) => {
@@ -11,3 +12,4 @@ const Cardapio = {
 };
 
 module.exports = Cardapio;
+

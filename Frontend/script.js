@@ -8,7 +8,7 @@ function verificarCredenciais(username, senha) {
 }
 
 // Função para lidar com o login
-document.getElementById('loginForm')?.addEventListener('submit', function(event) {
+document.getElementById('loginForm')?.addEventListener('submit', function (event) {
     event.preventDefault(); // Impede o envio padrão do formulário
     const username = document.getElementById('username').value;
     const senha = document.getElementById('senha').value;
@@ -41,7 +41,7 @@ function listarCardapio() {
 }
 
 // Função para adicionar um item ao cardápio
-document.getElementById('addItemForm')?.addEventListener('submit', function(event) {
+document.getElementById('addItemForm')?.addEventListener('submit', function (event) {
     event.preventDefault();
     const novoItem = {
         nome: document.getElementById('nome').value,
@@ -56,12 +56,12 @@ document.getElementById('addItemForm')?.addEventListener('submit', function(even
         },
         body: JSON.stringify(novoItem)
     })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.message);
-        listarCardapio(); // Atualiza a lista após adicionar
-    })
-    .catch(error => console.error('Erro ao adicionar item:', error));
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            listarCardapio(); // Atualiza a lista após adicionar
+        })
+        .catch(error => console.error('Erro ao adicionar item:', error));
 });
 
 // Função para listar reservas
@@ -79,7 +79,7 @@ function listarReservas() {
 }
 
 // Função para fazer uma reserva
-document.getElementById('addReservaForm')?.addEventListener('submit', function(event) {
+document.getElementById('addReservaForm')?.addEventListener('submit', function (event) {
     event.preventDefault();
     const novaReserva = {
         nome_cliente: document.getElementById('nome_cliente').value,
@@ -94,17 +94,17 @@ document.getElementById('addReservaForm')?.addEventListener('submit', function(e
         },
         body: JSON.stringify(novaReserva)
     })
-    .then(response => response.json())
-    .then(data => {
-        alert(data.message);
-        listarReservas(); // Atualiza a lista após adicionar
-    })
-    .catch(error => console.error('Erro ao fazer reserva:', error));
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            listarReservas(); // Atualiza a lista após adicionar
+        })
+        .catch(error => console.error('Erro ao fazer reserva:', error));
 });
 
 // Função para alternar entre tema claro e escuro
 document.querySelectorAll('#toggleTheme').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         const body = document.body;
         const mainContainer = document.getElementById('mainContent');
         const loginContainer = document.getElementById('loginContainer');
@@ -129,12 +129,12 @@ document.querySelectorAll('#toggleTheme').forEach(button => {
 });
 
 // Verificar a preferência do tema ao carregar a página
-window.onload = function() {
+window.onload = function () {
     if (localStorage.getItem('autenticado') === 'true') {
         document.getElementById('mainContent').style.display = 'block'; // Exibe o conteúdo principal
         listarCardapio();
         listarReservas();
-        
+
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark');
@@ -152,12 +152,12 @@ window.onload = function() {
 };
 
 // Verificar a preferência do tema ao carregar a página
-window.onload = function() {
+window.onload = function () {
     if (localStorage.getItem('autenticado') === 'true') {
         document.getElementById('mainContent').style.display = 'block'; // Exibe o conteúdo principal
         listarCardapio();
         listarReservas();
-        
+
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark');
@@ -176,12 +176,12 @@ window.onload = function() {
 
 
 // Verificar a preferência do tema ao carregar a página
-window.onload = function() {
+window.onload = function () {
     if (localStorage.getItem('autenticado') === 'true') {
         document.getElementById('mainContent').style.display = 'block'; // Exibe o conteúdo principal
         listarCardapio();
         listarReservas();
-        
+
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.classList.add('dark');
@@ -190,3 +190,50 @@ window.onload = function() {
         }
     }
 };
+
+document.getElementById('addProductForm')?.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const novoProduto = {
+        nome: document.getElementById('nome').value,
+        preco: document.getElementById('preco').value,
+        descricao: document.getElementById('descricao').value
+    };
+    fetch(`${apiUrl}/produtos`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(novoProduto)
+    })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            // Atualize a lista de produtos após adicionar
+            listarProdutos();
+        })
+        .catch(error => console.error('Erro ao adicionar produto:', error));
+});
+// /Frontend/script.js
+document.getElementById('addReservaForm')?.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const novaReserva = {
+        nome_cliente: document.getElementById('nome_cliente').value,
+        data_reserva: document.getElementById('data_reserva').value,
+        numero_pessoas: document.getElementById('numero_pessoas').value
+    };
+
+    fetch(`${apiUrl}/reservas`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(novaReserva)
+    })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            // Atualize a lista de reservas após adicionar
+            listarReservas();
+        })
+        .catch(error => console.error('Erro ao adicionar reserva:', error));
+});
