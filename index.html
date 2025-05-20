@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <title>Os Bons Espetos </title>
     
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,42 +32,51 @@
     height: 100%; /* A imagem ocupa 100% da altura do carrossel */
     object-fit: cover; /* Para manter a proporção da imagem e cobrir todo o espaço */
 }
+
     </style>
 </head>
 
 <body>
     
-    <!-- Navegação -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-lg">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">Os Bons Espetos</a>
-            <div class="d-lg-none">
-                <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#BookingModal">Reservation</button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html"> Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contato</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="d-none d-lg-block">
-                <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#BookingModal">Reservas</button>
-            </div>
+   <!-- Navegação -->
+<nav class="navbar navbar-expand-lg bg-white shadow-lg">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Os Bons Espetos</a>
+        <div class="d-lg-none">
+            <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal"
+                data-bs-target="#BookingModal">Reservation</button>
         </div>
-    </nav>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html"> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contato</a>
+                </li>
+                <!-- Ícone do Carrinho ao lado do Contato -->
+                <li class="nav-item">
+                    <div class="cart-icon" onclick="toggleCart()" style="display: inline-block; cursor: pointer; margin-left: 10px;">
+                        <i class="bi bi-basket2"></i> <!-- Ícone do carrinho -->
+                        <span class="cart-count">0</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="d-none d-lg-block">
+            <button type="button" class="custom-btn btn btn-danger" data-bs-toggle="modal"
+                data-bs-target="#BookingModal">Reservas</button>
+        </div>
+    </div>
+</nav>
+
 
      <!-- Carrossel -->
     <section id="carouselExample" class="carousel slide" data-bs-ride="carousel">
