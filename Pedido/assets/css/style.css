@@ -77,11 +77,12 @@ a {
 .nav-link {
   position: relative;
   color: var(--black);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem; /* Aumentar o tamanho da fonte para 2rem */
+  font-weight: 800;
   padding-top: 6px;
   display: flex;
 }
+
 
 .nav-link::after {
   content: "";
