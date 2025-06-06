@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produtos - Os Bons Espetos</title>
+  <meta name="description" content="Produtos do restaurante Os Bons Espetos" />
+  <meta name="author" content="Os Bons Espetos" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom scrollbar for better UX */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #a1a1aa;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: #f3f4f6;
+    }
+    /* Subtle shadow for cards */
+    .card-shadow {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      border-radius: 0.75rem;
+    }
+    /* Smooth button transitions */
+    button, a {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    /* Focus outline for accessibility */
+    a:focus, button:focus {
+      outline: 3px solid #000;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-600 font-sans leading-relaxed">
+
+  <!-- Sticky Navbar -->
+  <header class="sticky top-0 bg-white shadow-sm z-30">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center p-5">
+      <a href="../index.html" class="text-3xl font-extrabold text-gray-900 tracking-wide">Os Bons Espetos</a>
+      <ul class="flex space-x-12 text-lg font-semibold text-gray-700">
+        <li><a href="../../index.html" class="hover:text-gray-900 focus:text-gray-900 focus:outline-none">Home</a></li>
+        <li><a href="../../menu.html" class="hover:text-gray-900 focus:text-gray-900 focus:outline-none">Menu</a></li>
+        <li><a href="../../contact.html" class="hover:text-gray-900 focus:text-gray-900 focus:outline-none">Contato</a></li>
+        <li>
+          <a href="index.html" aria-current="page" class="text-black border-b-2 border-black pb-1 focus:outline-none focus:border-black">Produtos</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto text-center px-6 py-16">
+    <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Explore nossos Produtos</h1>
+    <p class="text-lg text-gray-500 max-w-3xl mx-auto mb-10">Descubra a variedade e qualidade dos nossos espetos e acompanhamentos feitos especialmente para você.</p>
+    <a href="#product-list" class="inline-block bg-black text-white font-semibold px-10 py-4 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+      Ver Produtos
+    </a>
+  </section>
+
+  <!-- Product List Section -->
+  <section id="product-list" class="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+    <!-- Example product card -->
+    <article class="card-shadow p-6 bg-white">
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">Espeto de Frango</h2>
+      <p class="text-gray-500 mb-4">Saboroso espeto de frango temperado com ervas finas e assado na perfeição.</p>
+      <div class="flex justify-between items-center text-lg font-semibold text-black">
+        <span>R$ 12,90</span>
+        <button
+          class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+          aria-label="Adicionar Espeto de Frango ao pedido"
+        >
+          Pedir
+        </button>
+      </div>
+    </article>
+
+    <article class="card-shadow p-6 bg-white">
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">Espeto de Carne</h2>
+      <p class="text-gray-500 mb-4">Espeto suculento de carne bovina preparado na brasa com temperos especiais.</p>
+      <div class="flex justify-between items-center text-lg font-semibold text-black">
+        <span>R$ 15,90</span>
+        <button
+          class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+          aria-label="Adicionar Espeto de Carne ao pedido"
+        >
+          Pedir
+        </button>
+      </div>
+    </article>
+
+    <article class="card-shadow p-6 bg-white">
+      <h2 class="text-2xl font-bold text-gray-900 mb-3">Espeto Misto</h2>
+      <p class="text-gray-500 mb-4">Combinação de carne, frango e linguiça com temperos artesanais.</p>
+      <div class="flex justify-between items-center text-lg font-semibold text-black">
+        <span>R$ 18,90</span>
+        <button
+          class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+          aria-label="Adicionar Espeto Misto ao pedido"
+        >
+          Pedir
+        </button>
+      </div>
+    </article>
+    <!-- You can add more products similarly -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-12 text-center text-gray-500 text-sm">
+    &copy; 2024 Os Bons Espetos. Todos os direitos reservados.
+  </footer>
+
+</body>
+
+</html>
+

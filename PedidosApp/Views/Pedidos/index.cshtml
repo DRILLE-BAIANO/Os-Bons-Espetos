@@ -1,0 +1,26 @@
+@model List<PedidosApp.Models.ItemPedido>
+
+    <h2>Pedido Atual</h2>
+    
+    <table>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+            <th>Ações</th>
+        </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Produto.Nome</td>
+            <td>@item.Produto.Preco.ToString("C")</td>
+            <td>@item.Quantidade</td>
+            <td>@(item.Produto.Preco * item.Quantidade).ToString("C")</td>
+            <td>
+                <a asp-action="Remover" asp-route-id="@item.Produto.Id">Remover</a>
+            </td>
+        </tr>
+    }
+    </table>
+    
