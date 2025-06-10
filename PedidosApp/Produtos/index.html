@@ -36,10 +36,136 @@
       outline: 3px solid #000;
       outline-offset: 2px;
     }
+    /* Cart Styles */
+    .cart {
+      background: #f9fafb;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+    }
+    .cart h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #111827;
+      border-bottom: 1px solid #d1d5db;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    .cart-item-details {
+      display: flex;
+      align-items: center;
+    }
+    .cart-item-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 0.375rem;
+      margin-right: 0.75rem;
+      object-fit: cover; /* Ensure the image fills the container */
+    }
+    .cart-item-name {
+      font-weight: 600;
+      color: #111827;
+    }
+    .cart-item-qty {
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .cart-item-price {
+      font-weight: 600;
+      color: #374151;
+    }
+    .cart-total {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #111827;
+      text-align: right;
+      margin-top: 1rem;
+    }
+    .empty-cart {
+      text-align: center;
+      color: #9ca3af;
+      font-style: italic;
+      margin-top: 2rem;
+    }
+    button.remove-btn {
+      background: #dc2626;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+      font-size: 0.8rem;
+    }
+    button.remove-btn:hover,
+    button.remove-btn:focus {
+      background: #b91c1c;
+      outline: none;
+    }
+
+    /* Orange and Black Theme */
+    .orange-theme {
+      background-color: #ffedd5; /* Light orange background */
+      color: #374151; /* Dark gray text */
+    }
+
+    .orange-theme h1,
+    .orange-theme h2,
+    .orange-theme .cart-item-name,
+    .orange-theme .cart-total {
+      color: #111827; /* Dark primary color */
+    }
+
+    .orange-theme header {
+      background-color: #f97316; /* Orange header */
+      color: white;
+    }
+
+    .orange-theme header a {
+      color: white;
+    }
+
+    .orange-theme header a:hover,
+    .orange-theme header a:focus {
+      color: #f9fafb;
+    }
+
+    .orange-theme .bg-black {
+      background-color: #111827; /* Black buttons */
+    }
+
+    .orange-theme .bg-black:hover,
+    .orange-theme .bg-black:focus {
+      background-color: #374151; /* Dark gray hover */
+    }
+
+    .orange-theme footer {
+      background-color: #111827; /* Black footer */
+      color: #f9fafb;
+    }
+
+    .product-image {
+      width: 100%; /* Make the image fill the container */
+      max-height: 200px; /* Limit the maximum height */
+      object-fit: cover; /* Maintain aspect ratio and cover the area */
+      border-radius: 0.75rem; /* Match card radius */
+      margin-bottom: 0.75rem; /* Add some space below the image */
+    }
   </style>
 </head>
 
-<body class="bg-white text-gray-600 font-sans leading-relaxed">
+<body class="orange-theme bg-white text-gray-600 font-sans leading-relaxed">
 
   <!-- Sticky Navbar -->
   <header class="sticky top-0 bg-white shadow-sm z-30">
@@ -68,13 +194,14 @@
   <!-- Product List Section -->
   <section id="product-list" class="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
     <!-- Example product card -->
-    <article class="card-shadow p-6 bg-white">
+    <article class="card-shadow p-6 bg-white product-card" data-id="1" data-price="12.90" data-image="https://source.unsplash.com/400x300/?chicken-skewer">
       <h2 class="text-2xl font-bold text-gray-900 mb-3">Espeto de Frango</h2>
+      <img src="https://source.unsplash.com/400x300/?chicken-skewer" alt="Espeto de Frango" class="product-image">
       <p class="text-gray-500 mb-4">Saboroso espeto de frango temperado com ervas finas e assado na perfeição.</p>
       <div class="flex justify-between items-center text-lg font-semibold text-black">
-        <span>R$ 12,90</span>
+        <span class="product-price">R$ 12,90</span>
         <button
-          class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+          class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 add-btn"
           aria-label="Adicionar Espeto de Frango ao pedido"
         >
           Pedir
@@ -82,13 +209,14 @@
       </div>
     </article>
 
-    <article class="card-shadow p-6 bg-white">
+    <article class="card-shadow p-6 bg-white product-card" data-id="2" data-price="15.90" data-image="https://source.unsplash.com/400x300/?beef-skewer">
       <h2 class="text-2xl font-bold text-gray-900 mb-3">Espeto de Carne</h2>
+      <img src="https://source.unsplash.com/400x300/?beef-skewer" alt="Espeto de Carne" class="product-image">
       <p class="text-gray-500 mb-4">Espeto suculento de carne bovina preparado na brasa com temperos especiais.</p>
       <div class="flex justify-between items-center text-lg font-semibold text-black">
-        <span>R$ 15,90</span>
+        <span class="product-price">R$ 15,90</span>
         <button
-          class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+          class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 add-btn"
           aria-label="Adicionar Espeto de Carne ao pedido"
         >
           Pedir
@@ -96,13 +224,14 @@
       </div>
     </article>
 
-    <article class="card-shadow p-6 bg-white">
+    <article class="card-shadow p-6 bg-white product-card" data-id="3" data-price="18.90" data-image="https://source.unsplash.com/400x300/?mixed-skewer">
       <h2 class="text-2xl font-bold text-gray-900 mb-3">Espeto Misto</h2>
+       <img src="https://source.unsplash.com/400x300/?mixed-skewer" alt="Espeto Misto" class="product-image">
       <p class="text-gray-500 mb-4">Combinação de carne, frango e linguiça com temperos artesanais.</p>
       <div class="flex justify-between items-center text-lg font-semibold text-black">
-        <span>R$ 18,90</span>
+        <span class="product-price">R$ 18,90</span>
         <button
-          class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+          class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 add-btn"
           aria-label="Adicionar Espeto Misto ao pedido"
         >
           Pedir
@@ -112,12 +241,107 @@
     <!-- You can add more products similarly -->
   </section>
 
+  <!-- Cart Section -->
+  <section class="max-w-7xl mx-auto px-6 pb-20">
+    <div class="cart" aria-label="Carrinho de Compras">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Seu Carrinho</h2>
+      <div id="cart-items">
+        <p class="empty-cart">Seu carrinho está vazio.</p>
+      </div>
+      <div class="cart-total text-2xl font-bold text-gray-900 mt-6" id="cart-total">Total: R$0,00</div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-gray-100 py-12 text-center text-gray-500 text-sm">
     &copy; 2024 Os Bons Espetos. Todos os direitos reservados.
   </footer>
 
+  <script>
+    (function() {
+      const cart = {};
+      const cartItemsContainer = document.getElementById('cart-items');
+      const cartTotalEl = document.getElementById('cart-total');
+      const emptyCartMsg = document.createElement('p');
+      emptyCartMsg.className = 'empty-cart';
+      emptyCartMsg.textContent = 'Seu carrinho está vazio.';
+
+      function formatPrice(value) {
+        return 'R$' + value.toFixed(2).replace('.', ',');
+      }
+
+      function renderCart() {
+        cartItemsContainer.innerHTML = '';
+        let total = 0;
+
+        const keys = Object.keys(cart);
+        if (keys.length === 0) {
+          cartItemsContainer.appendChild(emptyCartMsg);
+          cartTotalEl.textContent = 'Total: R$0,00';
+          return;
+        }
+
+        keys.forEach(id => {
+          const item = cart[id];
+          const itemTotal = item.price * item.qty;
+          total += itemTotal;
+
+          const div = document.createElement('div');
+          div.className = 'cart-item';
+          div.innerHTML = `
+            <div class="cart-item-details">
+              <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+              <div class="ml-2">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-qty">x${item.qty}</div>
+              </div>
+            </div>
+            <div class="cart-item-price">${formatPrice(itemTotal)}</div>
+            <button class="remove-btn" data-id="${id}" aria-label="Remover ${item.name} do carrinho">Remover</button>
+          `;
+          cartItemsContainer.appendChild(div);
+        });
+        cartTotalEl.textContent = 'Total: ' + formatPrice(total);
+      }
+
+      function addToCart(id, name, price, image) {
+        if (cart[id]) {
+          cart[id].qty += 1;
+        } else {
+          cart[id] = { name, price, qty: 1, image };
+        }
+        renderCart();
+      }
+
+      function removeFromCart(id) {
+        delete cart[id];
+        renderCart();
+      }
+
+      const productListSection = document.getElementById('product-list');
+
+      productListSection.addEventListener('click', (e) => {
+        if (e.target.classList.contains('add-btn')) {
+          const productCard = e.target.closest('.product-card');
+          const id = productCard.getAttribute('data-id');
+          const name = productCard.querySelector('.text-2xl').textContent;
+          const price = parseFloat(productCard.getAttribute('data-price'));
+          const image = productCard.getAttribute('data-image');
+          addToCart(id, name, price, image);
+        }
+      });
+
+      cartItemsContainer.addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove-btn')) {
+          const id = e.target.getAttribute('data-id');
+          removeFromCart(id);
+        }
+      });
+
+      renderCart();
+    })();
+  </script>
+
 </body>
 
 </html>
-
