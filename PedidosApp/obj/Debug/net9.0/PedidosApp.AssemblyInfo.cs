@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PedidosApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e90ca04af905faee22f1887f5f7b06f7d28b6a3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+965e09f1ef90cf5642244002843f78dddb5a7cd8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PedidosApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PedidosApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

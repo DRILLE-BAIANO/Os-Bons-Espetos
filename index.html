@@ -105,6 +105,10 @@
       transition: background-color 0.3s ease;
       white-space: nowrap;
       user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     .header-cta:hover,
@@ -507,6 +511,8 @@
     }
 
   </style>
+  <!-- Link Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -517,13 +523,21 @@
       <nav aria-label="Primary Navigation">
         <a href="index.html" class="logo">Os Bons Espetos</a>
         <div class="nav-links" role="menubar" aria-label="Primary">
-          <a href="index.html" role="menuitem" aria-current="page">Home</a>
-          <a href="menu.html" role="menuitem">Menu</a>
-          <a href="contact.html" role="menuitem">Contato</a>
-          <a href="PedidosApp/Produtos/index.html" role="menuitem">Pedir</a>
         </div>
-        <button class="header-cta" aria-haspopup="dialog" aria-controls="booking-modal" aria-expanded="false" id="openBooking">Reservas</button>
-      </nav>
+        <nav>
+          <button class="header-cta" aria-haspopup="dialog" aria-controls="booking-modal" aria-expanded="false" id="openBooking">
+            <span class="material-icons" aria-hidden="true" style="font-size: 20px; line-height:1; vertical-align: middle;">shopping_cart</span>
+          </button>
+        </nav>
+        <script>
+          // Link button click to desired URL without altering styles
+          document.getElementById('openBooking').addEventListener('click', function() {
+            window.location.href = 'PedidosApp/Produtos/index.html';
+          });
+        </script>
+      
+
+
     </div>
   </header>
 
@@ -706,12 +720,12 @@
   <footer>
     <div class="container" role="contentinfo">
       <div>
-        <h6>Local</h6>
+        <h3>Local</h3>
         <address>R. Virgílio Manesco, 21 - Conj. Res. Cel. Jose V. Franca II, Barra Bonita - SP, 17345-060</address>
         <a href="https://maps.app.goo.gl/veXqvEPpqaPnfEF36" class="custom-btn" target="_blank" rel="noopener noreferrer">Localização</a>
       </div>
       <div>
-        <h6>Funcionamento</h6>
+        <h3>Funcionamento</h3>
         <p>Segunda-feira - Sexta</p>
         <p>10:00 AM - 08:00 PM</p>
         <p>Tel: <a href="tel:14998569602" class="tel-link">14998569602</a></p>
@@ -735,7 +749,7 @@
     <div class="modal-content">
       <header class="modal-header">
         <h3 id="booking-title">Reservas de Mesa</h3>
-        <button type="button" class="close-button" aria-label="Close reservation form" id="closeBooking">&times;</button>
+        <button type="button" class="close-button" aria-label="Close reservation form" id="closeBooking">&times;</button>  
       </header>
       <form class="booking-form" role="form" action="#" method="post" novalidate>
         <label for="name">Nome Completo</label>
