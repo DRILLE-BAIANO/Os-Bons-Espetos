@@ -8,4 +8,6 @@ senha: 1234
 
 
 
- 
+ class="text-3xl font-extrabold text-gray-900 tracking-wide"
+
+ class="text-3xl font-extrabold text-gray-900 tracking-wide"
